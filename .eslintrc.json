@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react-native/all"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -19,7 +20,8 @@
     "plugins": [
         "react",
         "@typescript-eslint",
-        "react-native"
+        "react-native",
+        "prettier"
     ],
     "rules": {
         "default-case":"warn",
@@ -27,13 +29,11 @@
         "no-else-return":"warn",
         "no-inline-comments":"warn",
         "react/self-closing-comp":"warn",
-        "react/jsx-boolean-value":"warn",
-        "react-native/no-unused-styles": 1,
-        "react-native/split-platform-components": 1,
-        "react-native/no-inline-styles": 1,
-        "react-native/no-color-literals": 1,
-        "react-native/no-raw-text":1,
-        "react-native/no-single-element-style-arrays": 1
-      
+        "react/jsx-boolean-value":"warn"
+    },
+    "settings": {
+        "react":{
+            "version":"detect"
+        }
     }
 }
