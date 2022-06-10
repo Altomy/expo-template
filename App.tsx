@@ -1,8 +1,8 @@
 /* Importing the library */
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
 import { useAppStartup } from "hooks";
+import { NativeBaseProvider } from "native-base";
 
 /**
  * "If the app is not ready, return null, otherwise return the app."
@@ -19,11 +19,10 @@ export default function App() {
 
   /* Returning null if the app is not ready. */
   if (!appIsReady) return null;
-  /* Returning a view with a text and status bar. */
+  /* Returning a view */
   return (
-    <View>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <NativeBaseProvider>
       <StatusBar style="auto" />
-    </View>
+    </NativeBaseProvider>
   );
 }

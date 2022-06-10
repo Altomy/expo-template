@@ -12,6 +12,8 @@ import {
   Inter_700Bold,
   Inter_800ExtraBold,
 } from "@expo-google-fonts/inter";
+import { checkTranslation } from "utils";
+import "utils/Translations.utils";
 
 /**
  * This function will prevent the splash screen from auto hiding, load the fonts, and then hide the
@@ -34,6 +36,8 @@ export function useAppStartup() {
         await SplashScreen.preventAutoHideAsync();
         /* Loading the fonts. */
         await useFontsLoader();
+        /* Checking if the translation file is up to date. */
+        await checkTranslation();
       } catch (error) {
         /* Throwing an error if the app fails to load. */
         throw new Error("App startup error" + error);
