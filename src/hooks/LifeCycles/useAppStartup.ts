@@ -1,3 +1,10 @@
+/*
+ * useAppStartup.ts
+ * Created on Tue Jun 14 2022
+ *
+ * Copyright (c) 2022 Altomy Dev
+ */
+
 import { useState, useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
@@ -64,7 +71,6 @@ export function useAppStartup() {
 async function useFontsLoader() {
   /* Loading the fonts. */
   await Font.loadAsync({
-    Inter_900Black,
     Inter_100Thin,
     Inter_200ExtraLight,
     Inter_300Light,
@@ -73,6 +79,7 @@ async function useFontsLoader() {
     Inter_600SemiBold,
     Inter_700Bold,
     Inter_800ExtraBold,
+    Inter_900Black,
   });
 
   /* Returning nothing. */

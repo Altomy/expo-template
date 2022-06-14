@@ -15,7 +15,7 @@ export const DEFAULT_LANGUAGE = "en";
 i18n.use(initReactI18next).init({
   lng: DEFAULT_LANGUAGE,
   resources: {
-    ar: require("locales/ar"),
+    en: require("../locales/en.json"),
   },
   compatibilityJSON: "v3",
 });
