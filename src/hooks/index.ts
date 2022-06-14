@@ -13,3 +13,6 @@ export * from './States/useObject';
 export * from './States/useToggle';
 export * from './States/useIsLoading';
 export * from './States/useArray';
+export * from './States/useCounter';
+export * from './States/useAppStates';
+export * from './States/usePortal';
