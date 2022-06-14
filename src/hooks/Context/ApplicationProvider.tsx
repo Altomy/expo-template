@@ -5,11 +5,11 @@
  * Copyright (c) 2022 Altomy Dev
  */
 
-import { NativeBaseProvider, theme } from "native-base";
-import React, { FC } from "react";
-import { QueryClientProvider } from "react-query";
-import { queryClient } from "utils";
-import { UserProvider } from "./UserProvider";
+import { NativeBaseProvider, theme } from 'native-base';
+import React, { FC } from 'react';
+import { QueryClientProvider } from 'react-query';
+import { queryClient } from 'utils';
+import { UserProvider } from './UserProvider';
 
 /**
  * This function is a React component that takes in children and returns a React Fragment with the

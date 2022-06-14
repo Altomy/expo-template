@@ -5,13 +5,13 @@
  * Copyright (c) 2022 Altomy Dev
  */
 
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useUser } from "../Context/UserProvider";
-import React from "react";
-import { storagesKey } from "utils";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useUser } from '../Context/UserProvider';
+import React from 'react';
+import { storagesKey } from 'utils';
 
 /** Auth check state type */
-type AuthCheckStateType = "isLoading" | "isAuth" | "isNotAuth";
+export type AuthCheckStateType = 'isLoading' | 'isAuth' | 'isNotAuth';
 
 /**
  * It checks if the user is authenticated and returns the state of the check
@@ -22,7 +22,7 @@ type AuthCheckStateType = "isLoading" | "isAuth" | "isNotAuth";
 export function useAuthChecker(checkAuthInCall: boolean) {
   /* A React hook that is used to set the state of the component. */
   const [authCheckState, setAuthCheckState] =
-    React.useState<AuthCheckStateType>("isLoading");
+    React.useState<AuthCheckStateType>('isLoading');
 
   const { setUser } = useUser();
 
@@ -31,18 +31,18 @@ export function useAuthChecker(checkAuthInCall: boolean) {
     /* Checking if the user has a token. */
     const userAuthToken = await checkHaveUserToken();
     /* Setting the state of the component to "isNotAuth" if the user does not have a token. */
-    if (!userAuthToken) setAuthCheckState("isNotAuth");
+    if (!userAuthToken) setAuthCheckState('isNotAuth');
     /* A placeholder for the code that will be executed if the user has a token. */
     if (userAuthToken) {
       // Handle user token
-      setUser("User string");
+      setUser('User string');
     }
-  }, []);
+  }, [setUser]);
 
   /* Checking if the user is authenticated. */
   React.useEffect(() => {
     if (checkAuthInCall) builder();
-  }, []);
+  }, [builder, checkAuthInCall]);
 
   /* Returning an object with a property called authCheckState. */
   return { authCheckState };

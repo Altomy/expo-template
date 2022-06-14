@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
 /*
  * logger.ts
@@ -16,13 +15,13 @@
 export function fnLogger(
   functionName: string,
   componentName: string,
-  data?: string
+  data?: any
 ) {
-  console.log(
-    `Component: ${componentName} - Function: ${functionName} ${
-      data ? " - Data: " + data : ""
-    }`
-  );
+  console.log(`Function logger`);
+  console.log(`Component: ${componentName} - Function: ${functionName}`);
+  console.log('========================');
+  console.log(data);
+  console.log('========================');
 }
 
 /**
@@ -32,10 +31,11 @@ export function fnLogger(
  * @param {any} data - any - this is the data that is returned from the API call
  */
 export function apiLogger(componentName: string, modelName: string, data: any) {
+  console.log(`Api logger`);
   console.log(`Component: ${componentName} - Model: ${modelName}`);
-  console.log("========================");
+  console.log('========================');
   console.log(`Data - ${data}`);
-  console.log("========================");
+  console.log('========================');
 }
 
 /**
@@ -49,8 +49,9 @@ export function errApiLogger(
   modelName: string,
   error: any
 ) {
+  console.log(`Error Api logger`);
   console.log(`Component: ${componentName} - Model: ${modelName}`);
-  console.log("======================");
+  console.log('======================');
   console.log(`Error: ${JSON.stringify(error)}`);
-  console.log("======================");
+  console.log('======================');
 }

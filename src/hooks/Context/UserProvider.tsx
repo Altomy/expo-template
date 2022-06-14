@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 /*
  * UserProvider.tsx
  * Created on Tue Jun 14 2022
@@ -6,19 +5,19 @@
  * Copyright (c) 2022 Altomy Dev
  */
 
-import React, { FC, useState, createContext, useContext } from "react";
+import React, { FC, useState, createContext, useContext } from 'react';
 
 // TODO: Change with the real models type for user
-type UserType = string | null;
+export type UserType = string | null;
 
-type UserProviderType = {
+export type UserProviderType = {
   user: UserType | null;
   setUser: (data: UserType) => void;
 };
 
 /* Creating a context with a default value. */
 const UserProviderContext = createContext<UserProviderType>({
-  user: "",
+  user: '',
   setUser: () => {},
 });
 
@@ -49,7 +48,7 @@ export const useUser = () => {
   /* Returning the context of the UserProviderContext. */
   const context = useContext(UserProviderContext);
   /* Checking if the context is undefined and if it is it will throw an error. */
-  if (context === undefined) throw new Error("Must used in the UserProvider");
+  if (context === undefined) throw new Error('Must used in the UserProvider');
   /* Returning the context object. */
   return context;
 };
