@@ -16,3 +16,4 @@ export * from './States/useArray';
 export * from './States/useCounter';
 export * from './States/useAppStates';
 export * from './States/usePortal';
+export * from './Navigation/useNavigationHook';

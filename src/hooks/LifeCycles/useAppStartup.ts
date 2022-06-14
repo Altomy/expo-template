@@ -21,6 +21,10 @@ import {
 } from '@expo-google-fonts/inter';
 import { checkTranslation } from 'utils';
 import 'utils/Translations.utils';
+import { enableScreens } from 'react-native-screens';
+
+/* Enabling the react-native-screens library. */
+enableScreens(true);
 
 /**
  * This function will prevent the splash screen from auto hiding, load the fonts, and then hide the

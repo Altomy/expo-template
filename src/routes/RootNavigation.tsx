@@ -20,7 +20,10 @@ const RootStack = createNativeStackNavigator<RootStackParams>();
 const RootNavigation: FC = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator initialRouteName={'home'}>
+      <RootStack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={'home'}
+      >
         {/* Creating a screen with the name of `home` and the component of `Home` */}
         <RootStack.Screen
           name={'home'}
