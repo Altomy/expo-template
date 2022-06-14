@@ -1,54 +1,24 @@
-import axios from "axios";
+/*
+ * EntryPoint.tsx
+ * Created on Tue Jun 14 2022
+ *
+ * Copyright (c) 2022 Altomy Dev
+ */
+
+import { useAuthChecker, useUser } from "hooks";
 import { Box, Button, ScrollView, Text } from "native-base";
 import React from "react";
-import { useQuery } from "react-query";
-import {
-  useCreateMutation,
-  useFindByIndexQuery,
-  useListQuery,
-  usePostQuery,
-} from "utils";
 
 /* A page view EntryPoint */
 export default function EntryPoint() {
-  const { data, error, isError, isLoading } = useFindByIndexQuery<{
-    title: string;
-  }>("categories", 1);
-  if (isLoading) {
-    return (
-      <Box flex={1} safeAreaTop>
-        <Text>Loading ...</Text>
-      </Box>
-    );
-  }
-
-  const {
-    mutate,
-    data: d,
-    error: e,
-  } = useCreateMutation<{ data: string }, { title: string }>("categories");
-
-  const {} = usePostQuery("key", { title: "hello" });
-  if (isError) {
-    return <Text>Error ... {JSON.stringify(error)}</Text>;
-  }
-  if (data) {
-    console.log(data);
-    return (
-      <Box flex={1} safeAreaTop>
-        <ScrollView>
-          <Text>Hello world</Text>
-          <Text>{data.title}</Text>
-          <Button
-            onPress={() => {
-              mutate({ title: "hi world" });
-            }}
-          >
-            mutate
-          </Button>
-        </ScrollView>
-      </Box>
-    );
-  }
-  return null;
+  useAuthChecker(true);
+  const { user } = useUser();
+  return (
+    <Box flex={1} safeAreaTop>
+      <ScrollView>
+        <Text>Check the user is auth</Text>
+        {user && <Text>have user: {user}</Text>}
+      </ScrollView>
+    </Box>
+  );
 }

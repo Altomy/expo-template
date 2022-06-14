@@ -1,11 +1,8 @@
 /* Importing the library */
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { useAppStartup } from "hooks";
-import { NativeBaseProvider } from "native-base";
-import { queryClient, theme } from "utils";
+import { ApplicationProvider, useAppStartup } from "hooks";
 import EntryPoint from "EntryPoint";
-import { QueryClientProvider } from "react-query";
 
 /**
  * "If the app is not ready, return null, otherwise return the app."
@@ -24,11 +21,9 @@ export default function App() {
   if (!appIsReady) return null;
   /* Returning a view */
   return (
-    <QueryClientProvider client={queryClient}>
-      <NativeBaseProvider theme={theme}>
-        <EntryPoint />
-        <StatusBar style="auto" />
-      </NativeBaseProvider>
-    </QueryClientProvider>
+    <ApplicationProvider>
+      <EntryPoint />
+      <StatusBar style="auto" />
+    </ApplicationProvider>
   );
 }

@@ -1,3 +1,10 @@
+/*
+ * useAppStartup.ts
+ * Created on Tue Jun 14 2022
+ *
+ * Copyright (c) 2022 Altomy Dev
+ */
+
 import { useState, useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
