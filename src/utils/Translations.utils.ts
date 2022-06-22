@@ -2,22 +2,22 @@
  * Translations
  * @utils
  */
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import { storagesKey } from "./Constants.utils";
-import { I18nManager } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { storagesKey } from './Constants.utils';
+import { I18nManager } from 'react-native';
 
 /* Setting the default language to English, Change it with current default language */
-export const DEFAULT_LANGUAGE = "en";
+export const DEFAULT_LANGUAGE = 'en';
 
 /* Initializing the i18n library with the default language and the resources. */
 i18n.use(initReactI18next).init({
   lng: DEFAULT_LANGUAGE,
   resources: {
-    en: require("../locales/en.json"),
+    en: require('../locales/en.json'),
   },
-  compatibilityJSON: "v3",
+  compatibilityJSON: 'v3',
 });
 
 /**
@@ -44,7 +44,7 @@ async function setDefaultLanguage() {
   /* Setting the default language to the AsyncStorage. */
   await AsyncStorage.setItem(storagesKey.locale, DEFAULT_LANGUAGE);
   /* Setting the direction of the app to the given language. */
-  I18nManager.forceRTL(DEFAULT_LANGUAGE == "en" ? false : true);
+  I18nManager.forceRTL(DEFAULT_LANGUAGE === 'en' ? false : true);
 }
 
 /**
@@ -58,7 +58,7 @@ async function setLanguage(language: string) {
   /* Changing the language of the app. */
   i18n.changeLanguage(language);
   /* Setting the direction of the app to the given language. */
-  I18nManager.forceRTL(language == "en" ? false : true);
+  I18nManager.forceRTL(language === 'en' ? false : true);
 }
 
 /**
@@ -69,5 +69,5 @@ export async function isRTL() {
   /* Getting the locale from the AsyncStorage. */
   const locale = await AsyncStorage.getItem(storagesKey.locale);
   /* Checking if the locale is ar, if it is, it returns true, otherwise it returns false. */
-  return locale == "ar" ? true : false;
+  return locale === 'ar' ? true : false;
 }

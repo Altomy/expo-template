@@ -5,7 +5,7 @@
  * Copyright (c) 2022 Altomy Dev
  */
 
-import { useRef } from "react";
+import { useRef } from 'react';
 
 export function useFirstMountState(): boolean {
   const isFirst = useRef(true);

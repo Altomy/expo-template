@@ -6,8 +6,8 @@
  * Copyright (c) 2022 Altomy Dev
  */
 
-import { useUpdateEffect } from "../LifeCycles/useUpdateEffect";
-import { useEffectOnce } from "../LifeCycles/useEffectOnce";
+import { useUpdateEffect } from '../LifeCycles/useUpdateEffect';
+import { useEffectOnce } from '../LifeCycles/useEffectOnce';
 
 /**
  * UseComponentLogger is a custom hook that logs when a component mounts, unmounts, and updates.

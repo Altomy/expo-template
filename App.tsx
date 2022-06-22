@@ -1,8 +1,8 @@
 /* Importing the library */
-import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { ApplicationProvider, useAppStartup } from "hooks";
-import EntryPoint from "EntryPoint";
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { ApplicationProvider, useAppStartup } from 'hooks';
+import EntryPoint from './src/EntryPoint';
 
 /**
  * "If the app is not ready, return null, otherwise return the app."

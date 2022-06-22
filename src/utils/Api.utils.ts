@@ -2,9 +2,9 @@
  * Api
  * @utils
  */
-import axios, { AxiosResponse } from "axios";
-import { QueryClient, useMutation, useQuery } from "react-query";
-import { BaseUrl } from "./Constants.utils";
+import axios, { AxiosResponse } from 'axios';
+import { QueryClient, useMutation, useQuery } from 'react-query';
+import { BaseUrl } from './Constants.utils';
 
 /* Creating a new instance of the QueryClient class. */
 export const queryClient = new QueryClient();
